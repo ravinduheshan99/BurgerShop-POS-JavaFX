@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="521.0" prefWidth="657.0" stylesheets="@css/Button.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SearchCustomerFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2c3e50" height="81.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="658.0" />
+      <Label layoutX="171.0" layoutY="19.0" text="SEARCH CUSTOMER" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI" size="35.0" />
+         </font>
+      </Label>
+      <Button layoutX="470.0" layoutY="463.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: #e74c3c;" text="Back">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tblCusDetails" layoutX="293.0" layoutY="222.0" prefHeight="233.0" prefWidth="345.0" stylesheets="@css/Table.css">
+         <columns>
+            <TableColumn fx:id="colOid" prefWidth="109.0" text="Order ID" />
+            <TableColumn fx:id="colQty" prefWidth="136.0" text="Order Quantity" />
+            <TableColumn fx:id="colTot" prefWidth="98.0" text="Total" />
+         </columns>
+      </TableView>
+      <Label layoutX="292.0" layoutY="104.0" text="Customer ID :">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCid" layoutX="388.0" layoutY="99.0" prefHeight="29.0" prefWidth="249.0" promptText="Customer ID">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </TextField>
+      <Button layoutX="291.0" layoutY="138.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="29.0" prefWidth="345.0" text="Search">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="294.0" layoutY="182.0" text="Name :">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtName" editable="false" layoutX="388.0" layoutY="177.0" prefHeight="29.0" prefWidth="249.0" promptText="Customer Name">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </TextField>
+      <Button layoutX="293.0" layoutY="463.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: #f1c40f;" text="Clear">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="440.0" fitWidth="274.0" layoutY="81.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/06.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

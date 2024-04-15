@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="521.0" prefWidth="657.0" stylesheets="@css/Button.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SearchOrderFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2c3e50" height="81.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="657.0" />
+      <Label layoutX="205.0" layoutY="19.0" text="SEARCH ORDER" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI" size="35.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="440.0" fitWidth="289.0" layoutX="-1.0" layoutY="81.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/03.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="309.0" layoutY="119.0" text="Enter Order ID :">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtOid" layoutX="421.0" layoutY="111.0" prefHeight="34.0" prefWidth="211.0" promptText="Order ID">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </TextField>
+      <Button layoutX="309.0" layoutY="166.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="29.0" prefWidth="322.0" text="Search">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="309.0" layoutY="217.0" text="Customer ID :">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCid" editable="false" layoutX="421.0" layoutY="210.0" prefHeight="34.0" prefWidth="211.0" promptText="Customer ID">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </TextField>
+      <Label layoutX="309.0" layoutY="263.0" text="Name :">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtName" editable="false" layoutX="421.0" layoutY="256.0" prefHeight="34.0" prefWidth="211.0" promptText="Customer Name">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </TextField>
+      <Label layoutX="309.0" layoutY="308.0" text="Quantity :">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtQty" editable="false" layoutX="421.0" layoutY="301.0" prefHeight="34.0" prefWidth="211.0" promptText="Quantity">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </TextField>
+      <Label layoutX="309.0" layoutY="354.0" text="Total :">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtTotal" editable="false" layoutX="421.0" layoutY="347.0" prefHeight="34.0" prefWidth="211.0" promptText="Total">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </TextField>
+      <Label layoutX="309.0" layoutY="398.0" text="Order Status :">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtOrderStatus" editable="false" layoutX="421.0" layoutY="391.0" prefHeight="34.0" prefWidth="211.0" promptText="Order Status">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </TextField>
+      <Button layoutX="368.0" layoutY="463.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="34.0" prefWidth="101.0" style="-fx-background-color: #e74c3c;" text="Back">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="482.0" layoutY="463.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="34.0" prefWidth="101.0" style="-fx-background-color: #f1c40f;" text="Clear">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
