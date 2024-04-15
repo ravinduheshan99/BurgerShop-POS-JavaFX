@@ -53,23 +53,33 @@ public class SearchOrderFormController {
         alert.showAndWait();
     }
 
-    public void btnSearchOnAction(ActionEvent actionEvent) {
+
+     public void btnSearchOnAction(ActionEvent actionEvent) {
         String oid = txtOid.getText();
+        boolean found = false;
 
         if (oid.isEmpty() || oid.charAt(0) != 'B') {
             showAlert("Alert", "Info Validation", "Please Provide Valid Informations.");
-        }else {
-            for(int i=0; i<dbord.size(); i++){
-                if(dbord.get(i).getOrderId().equals(txtOid.getText())){
+            txtOid.clear();
+        } else {
+            for (int i = 0; i < dbord.size(); i++) {
+                if (dbord.get(i).getOrderId().equals(txtOid.getText())) {
+                    found = true;
                     txtCid.setText(dbcus.get(i).getCustomerId());
                     txtName.setText(dbcus.get(i).getCustomerName());
-                    txtQty.setText(dbord.get(i).getOrderQty()+"");
-                    txtTotal.setText(dbord.get(i).getOrderValue()+"0");
+                    txtQty.setText(dbord.get(i).getOrderQty() + "");
+                    txtTotal.setText(dbord.get(i).getOrderValue() + "0");
                     txtOrderStatus.setText(getStatusText(dbord.get(i).getOrderStatus()));
                 }
             }
+            if (!found) {
+                showAlert("Alert", "Info Validation", "Order Does Not Exists.");
+                txtOid.clear();
+            }
         }
+
     }
+
 
     public void btnBackOnAction(ActionEvent actionEvent) {
         try {
