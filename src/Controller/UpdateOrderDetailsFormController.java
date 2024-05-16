@@ -64,6 +64,8 @@ public class UpdateOrderDetailsFormController {
     private Scene scene;
     private Parent root;
 
+    private boolean isFound = false;
+
     private void showAlert(String title, String header, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
@@ -78,30 +80,34 @@ public class UpdateOrderDetailsFormController {
 
         if (oid.isEmpty() || oid.charAt(0) != 'B') {
             showAlert("Alert", "Info Validation", "Please Provide Valid Informations.");
-        } else {
-            for (int i = 0; i < dbord.size(); i++) {
-                if (dbord.get(i).getOrderId().equals(txtOid.getText())) {
-                    txtCid.setText(dbcus.get(i).getCustomerId());
-                    txtName.setText(dbcus.get(i).getCustomerName());
-                    txtQty.setText(dbord.get(i).getOrderQty() + "");
-                    txtTotal.setText(dbord.get(i).getOrderValue() + "0");
-                    txtStatus.setText(getStatusText(dbord.get(i).getOrderStatus()));
-                } else {
-                    showAlert("Alert", "Info Validation", "Please Provide Valid Order ID.");
-                    txtOid.clear();
-                    txtCid.clear();
-                    txtName.clear();
-                    txtQty.clear();
-                    txtStatus.clear();
-                    txtTotal.clear();
-                }
+        }
+        for (int i = 0; i < dbord.size(); i++) {
+            if (dbord.get(i).getOrderId().equals(txtOid.getText())) {
+                isFound = true;
+                txtCid.setText(dbcus.get(i).getCustomerId());
+                txtName.setText(dbcus.get(i).getCustomerName());
+                txtQty.setText(dbord.get(i).getOrderQty() + "");
+                txtTotal.setText(dbord.get(i).getOrderValue() + "0");
+                txtStatus.setText(getStatusText(dbord.get(i).getOrderStatus()));
             }
         }
+        if (!isFound) {
+            showAlert("Alert", "Info Validation", "Please Provide Valid Order ID.");
+            txtOid.clear();
+            txtCid.clear();
+            txtName.clear();
+            txtQty.clear();
+            txtStatus.clear();
+            txtTotal.clear();
+        }
+
     }
+
     public void btnCalcTotalOnAction(ActionEvent actionEvent) {
         tot = Integer.parseInt(txtQty.getText()) * BURGERPRICE;
         txtTotal.setText(tot + "0");
     }
+
     public void btnUpdateOnAction(ActionEvent actionEvent) {
         for (int i = 0; i < dbord.size(); i++) {
             if (dbord.get(i).getOrderId().equals(txtOid.getText())) {
@@ -143,6 +149,7 @@ public class UpdateOrderDetailsFormController {
         stage.setScene(scene);
         stage.show();
     }
+
     public void btnClearOnAction(ActionEvent actionEvent) {
         txtOid.clear();
         txtCid.clear();
