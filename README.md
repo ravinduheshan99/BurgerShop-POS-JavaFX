@@ -12,6 +12,8 @@ The BurgerShop POS System is a desktop application designed to streamline the or
    <img src="https://github.com/ravinduheshan99/BurgerShop-POS-JavaFX/blob/main/assets/img/01.png" alt="Interface 01" width="1200" height="600">
 </div>
 
+---
+
 <table>
   <tr>
     <td><img src="https://github.com/ravinduheshan99/BurgerShop-POS-JavaFX/blob/main/assets/img/02.png" alt="Interface 02" width="1200" height="400"></td>
@@ -29,6 +31,8 @@ The BurgerShop POS System is a desktop application designed to streamline the or
   </tr>
   
 </table>
+
+---
 
 ## Features
 
